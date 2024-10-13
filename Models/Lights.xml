@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <model>
+        <name>Red Light</name>
+        <path>Aircraft/T-50/Models/Lights/RedLight.xml</path>
+        <offsets>
+            <x-m>15.19</x-m>
+            <y-m>-7.17</y-m>
+            <z-m>-0.02</z-m>
+        </offsets>
+    </model>
+
+    <model>
+        <name>Green Light</name>
+        <path>Aircraft/T-50/Models/Lights/GreenLight.xml</path>
+        <offsets>
+            <x-m>15.19</x-m>
+            <y-m> 7.17</y-m>
+            <z-m>-0.02</z-m>
+        </offsets>
+    </model>
+    
+    <model>
+        <name>Landing Lights</name>
+        <path>Aircraft/T-50/Models/Lights/light-cone.xml</path>
+        <offsets>
+            <x-m> 6.68 </x-m>
+            <y-m> 0.00 </y-m>
+            <z-m>-1.10 </z-m>
+        </offsets>
+    </model>
+    
+</PropertyList>

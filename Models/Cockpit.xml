@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<path>Cockpit.ac</path>
+
+	<model>
+		<name>Pilot</name>
+		<path>Aircraft/T-50/Models/Pilot/Pilot.xml</path>
+		<offsets>
+			<x-m> 5</x-m>
+			<y-m> 0.00</y-m>
+			<z-m>0</z-m>
+		</offsets>
+	</model>
+	
+	<model>
+		<name>Panel</name>
+		<path>Aircraft/T-50/Models/Panel/Panel.xml</path>
+	</model>
+	
+</PropertyList>
