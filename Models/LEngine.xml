@@ -6,7 +6,7 @@
 <object-name>FlameModel</object-name>
 </effect>
 	
-		<animation>
+		<!--<animation>
 		<type>material</type>
 		<object-name>heat</object-name>
 		<object-name>FlameModel</object-name>
@@ -15,7 +15,7 @@
 			<green>251</green>
 			<blue>0</blue>
 			</emission>
-	</animation>
+	</animation>-->
 	
 
  
@@ -41,7 +41,7 @@
     <object-name>13</object-name>
     <object-name>14</object-name>
     <object-name>15</object-name>
-	<property>/controls/flight/aileron</property>
+	<property>sim/multiplay/generic/float[20]</property>
 	<factor>20</factor>
     <center>
       <x-m>18.4404</x-m>
@@ -77,7 +77,7 @@
     <object-name>13</object-name>
     <object-name>14</object-name>
     <object-name>15</object-name>
-	<property>/controls/flight/rudder</property>
+	<property>sim/multiplay/generic/float[22]</property>
 	<factor>30</factor>
     <center>
       <x-m>18.4404</x-m>
@@ -113,7 +113,7 @@
 		<object-name>13</object-name>
 		<object-name>14</object-name>
 		<object-name>15</object-name>
-		<property>/controls/flight/elevator</property>
+		<property>sim/multiplay/generic/float[21]</property>
 		<factor>20</factor>
 		<center>
 		  <x-m>18.4404</x-m>
@@ -166,9 +166,12 @@
     <animation>
         <type>select</type>
         <object-name>heat</object-name>
-		        <object-name>FlameModel</object-name>
+				        <object-name>FlameModel</object-name>
         <condition>
-            <property>engines/engine[0]/augmentation</property>
+		<greater-than>
+            <property>engines/engine[1]/n1</property>
+				<value>99</value>
+			</greater-than>
             <not>
                 <property>sim/crashed</property>
             </not>
@@ -176,5 +179,16 @@
     </animation>
 	
   
+	  <animation>
+	<type>scale</type>
+	<object-name>FlameModel</object-name>
+	<property>sim/multiplay/generic/float[31]</property>    
+  <x-min>.5</x-min>
+  <y-min>1.0</y-min>
+  <z-min>1</z-min>    
+	<x-factor>1</x-factor>
+	<y-factor>0</y-factor>
+	<z-factor>0</z-factor>
+</animation>
 
 </PropertyList>

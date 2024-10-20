@@ -218,18 +218,18 @@ btn_P6_empty.listen("clicked", func {
 		});
 P6Ctls.addItem(btn_P6_empty);
 
-# click button P6:R-27R
+# click button P6:R-77
 var btn_P6_R27R = canvas.gui.widgets.Button.new(root, canvas.style, {})
-        .setText("R-27R")
+        .setText("R-77")
         #.move(300, 300)
         .setFixedSize(90, 25);
 
 btn_P6_R27R.listen("clicked", func {
         # add code here to react on click on button.
-		print("P6: R-27R");
-		setprop("sim/weight[5]/selected","R-27R");
+		print("P6: R-77");
+		setprop("sim/weight[5]/selected","R-77");
 		setprop("/controls/armament/station[5]/release","false");
-		setprop("fdm/jsbsim/inertia/pointmass-weight-lbs[5]",557.769); # R-27R = 253 KG
+		setprop("fdm/jsbsim/inertia/pointmass-weight-lbs[5]",557.769); # R-77 = 253 KG
 		pylons_update();
 		});
 P6Ctls.addItem(btn_P6_R27R);
@@ -301,18 +301,18 @@ btn_P4_empty.listen("clicked", func {
 		});
 P4Ctls.addItem(btn_P4_empty);
 
-# click button P4:R-27R
+# click button P4:R-77
 var btn_P4_R27R = canvas.gui.widgets.Button.new(root, canvas.style, {})
-        .setText("R-27R")
+        .setText("R-77")
         #.move(300, 300)
         .setFixedSize(90, 25);
 
 btn_P4_R27R.listen("clicked", func {
         # add code here to react on click on button.
-		print("P4: R-27R");
-		setprop("sim/weight[3]/selected","R-27R");
+		print("P4: R-77");
+		setprop("sim/weight[3]/selected","R-77");
 		setprop("/controls/armament/station[3]/release","false");
-		setprop("fdm/jsbsim/inertia/pointmass-weight-lbs[3]",557.769); # R-27R = 253 KG
+		setprop("fdm/jsbsim/inertia/pointmass-weight-lbs[3]",557.769); # R-77 = 253 KG
 		pylons_update();
 		});
 P4Ctls.addItem(btn_P4_R27R);
@@ -384,18 +384,18 @@ btn_P10_empty.listen("clicked", func {
 		});
 P10Ctls.addItem(btn_P10_empty);
 
-# click button P10:R-27R
+# click button P10:R-77
 var btn_P10_R27R = canvas.gui.widgets.Button.new(root, canvas.style, {})
-        .setText("R-27R")
+        .setText("R-77")
         #.move(300, 300)
         .setFixedSize(90, 25);
 
 btn_P10_R27R.listen("clicked", func {
         # add code here to react on click on button.
-		print("P10: R-27R");
-		setprop("sim/weight[9]/selected","R-27R");
+		print("P10: R-77");
+		setprop("sim/weight[9]/selected","R-77");
 		setprop("/controls/armament/station[9]/release","false");
-		setprop("fdm/jsbsim/inertia/pointmass-weight-lbs[9]",557.769); # R-27R = 253 KG
+		setprop("fdm/jsbsim/inertia/pointmass-weight-lbs[9]",557.769); # R-77 = 253 KG
 		pylons_update();
 		});
 P10Ctls.addItem(btn_P10_R27R);
@@ -482,18 +482,18 @@ btn_P2_empty.listen("clicked", func {
 		});
 P2Ctls.addItem(btn_P2_empty);
 
-# click button P2:R-27R
+# click button P2:R-77
 var btn_P2_R27R = canvas.gui.widgets.Button.new(root, canvas.style, {})
-        .setText("R-27R")
+        .setText("R-77")
         #.move(300, 300)
         .setFixedSize(90, 25);
 
 btn_P2_R27R.listen("clicked", func {
         # add code here to react on click on button.
-		print("P2: R-27R");
-		setprop("sim/weight[1]/selected","R-27R");
+		print("P2: R-77");
+		setprop("sim/weight[1]/selected","R-77");
 		setprop("/controls/armament/station[1]/release","false");
-		setprop("fdm/jsbsim/inertia/pointmass-weight-lbs[1]",557.769); # R-27R = 253 KG
+		setprop("fdm/jsbsim/inertia/pointmass-weight-lbs[1]",557.769); # R-77 = 253 KG
 		pylons_update();
 		});
 P2Ctls.addItem(btn_P2_R27R);
@@ -580,18 +580,18 @@ btn_P1_empty.listen("clicked", func {
 		});
 P1Ctls.addItem(btn_P1_empty);
 
-# click button P1:R-27R
+# click button P1:R-77
 var btn_P1_R27R = canvas.gui.widgets.Button.new(root, canvas.style, {})
-        .setText("R-27R")
+        .setText("R-77")
         #.move(300, 300)
         .setFixedSize(90, 25);
 
 btn_P1_R27R.listen("clicked", func {
         # add code here to react on click on button.
-		print("P1: R-27R");
-		setprop("sim/weight/selected","R-27R");
+		print("P1: R-77");
+		setprop("sim/weight/selected","R-77");
 		setprop("/controls/armament/station[0]/release","false");
-		setprop("fdm/jsbsim/inertia/pointmass-weight-lbs",557.769); # R-27R = 253 KG
+		setprop("fdm/jsbsim/inertia/pointmass-weight-lbs",557.769); # R-77 = 253 KG
 		pylons_update();
 		});
 P1Ctls.addItem(btn_P1_R27R);
@@ -678,18 +678,18 @@ btn_P9_empty.listen("clicked", func {
 		});
 P9Ctls.addItem(btn_P9_empty);
 
-# click button P9:R-27R
+# click button P9:R-77
 var btn_P9_R27R = canvas.gui.widgets.Button.new(root, canvas.style, {})
-        .setText("R-27R")
+        .setText("R-77")
         #.move(300, 300)
         .setFixedSize(90, 25);
 
 btn_P9_R27R.listen("clicked", func {
         # add code here to react on click on button.
-		print("P9: R-27R");
-		setprop("sim/weight[8]/selected","R-27R");
+		print("P9: R-77");
+		setprop("sim/weight[8]/selected","R-77");
 		setprop("/controls/armament/station[8]/release","false");
-		setprop("fdm/jsbsim/inertia/pointmass-weight-lbs[8]",557.769); # R-27R = 253 KG
+		setprop("fdm/jsbsim/inertia/pointmass-weight-lbs[8]",557.769); # R-77 = 253 KG
 		pylons_update();
 		});
 P9Ctls.addItem(btn_P9_R27R);
@@ -776,18 +776,18 @@ btn_P3_empty.listen("clicked", func {
 		});
 P3Ctls.addItem(btn_P3_empty);
 
-# click button P3:R-27R
+# click button P3:R-77
 var btn_P3_R27R = canvas.gui.widgets.Button.new(root, canvas.style, {})
-        .setText("R-27R")
+        .setText("R-77")
         #.move(300, 300)
         .setFixedSize(90, 25);
 
 btn_P3_R27R.listen("clicked", func {
         # add code here to react on click on button.
-		print("P3: R-27R");
-		setprop("sim/weight[2]/selected","R-27R");
+		print("P3: R-77");
+		setprop("sim/weight[2]/selected","R-77");
 		setprop("/controls/armament/station[2]/release","false");
-		setprop("fdm/jsbsim/inertia/pointmass-weight-lbs[2]",557.769); # R-27R = 253 KG
+		setprop("fdm/jsbsim/inertia/pointmass-weight-lbs[2]",557.769); # R-77 = 253 KG
 		pylons_update();
 		});
 P3Ctls.addItem(btn_P3_R27R);
@@ -859,18 +859,18 @@ btn_P5_empty.listen("clicked", func {
 		});
 P5Ctls.addItem(btn_P5_empty);
 
-# click button P5:R-27R
+# click button P5:R-77
 var btn_P5_R27R = canvas.gui.widgets.Button.new(root, canvas.style, {})
-        .setText("R-27R")
+        .setText("R-77")
         #.move(300, 300)
         .setFixedSize(90, 25);
 
 btn_P5_R27R.listen("clicked", func {
         # add code here to react on click on button.
-		print("P5: R-27R");
-		setprop("sim/weight[4]/selected","R-27R");
+		print("P5: R-77");
+		setprop("sim/weight[4]/selected","R-77");
 		setprop("/controls/armament/station[4]/release","false");
-		setprop("fdm/jsbsim/inertia/pointmass-weight-lbs[4]",557.769); # R-27R = 253 KG
+		setprop("fdm/jsbsim/inertia/pointmass-weight-lbs[4]",557.769); # R-77 = 253 KG
 		pylons_update();
 		});
 P5Ctls.addItem(btn_P5_R27R);

@@ -388,27 +388,36 @@ var MISSILE = {
 
 sendinflight: func(lat,lon,alt){
     #Send notify in flight
-                        if(me.NameOfMissile == "Aim-120"){me.NameOfMissile="Aim-120";typeID = 52;}
-                        if(me.NameOfMissile == "Aim-9x"){me.NameOfMissile="Aim-9x";typeID = 98;}
-                        if(me.NameOfMissile == "GBU-39"){me.NameOfMissile="GBU-39";typeID = 18;}
+    if(getprop("payload/armament/msg")){
+    if(me.free == 1) {
+        print("Missile missed. not sending"); 
+    } else {
+
+
+            if(me.NameOfMissile == "R-77"){me.NameOfMissile="R-77";typeID = 83;}
+                        if(me.NameOfMissile == "R-73"){me.NameOfMissile="R-73";typeID = 82;}
 
 var msg = notifications.ArmamentInFlightNotification.new("mfly", 78, 0?damage.DESTROY:damage.MOVE, damage.DamageRecipient.typeID2emesaryID(typeID));
-   
-
-
-        	msg.Position.set_latlon(me.model.getNode("latitude-deg-prop", 1),me.model.getNode("longitude-deg-prop", 1),me.model.getNode("heading-deg-prop", 1));
+        msg.Position.set_latlon(lon,lat,1,0);
         msg.Flags = 1;#bit #0
-        	msg.Flags = bits.set(msg.Flags, 1);#bit #1
+        msg.Flags = bits.set(msg.Flags, 1);#bit #1
         msg.IsDistinct = 0;
-        msg.RemoteCallsign = me.Tgt.get_Callsign();
+        var target = radar.GetTarget();
+        if (target == nil) {
+        msg.RemoteCallsign = "none";
+        } else {
+msg.RemoteCallsign = me.Tgt.get_Callsign();
+        }
+
         msg.UniqueIndex = ""~typeID~typeID;
-        msg.Pitch = me.pitch;
-        msg.Heading = me.hdg;
+        msg.Pitch = 0;
+        msg.Heading = getprop("orientation/heading-deg", 1);
         msg.u_fps = 0;
         #msg.isValid();
         notifications.geoBridgedTransmitter.NotifyAll(msg);
         print("Missile alert sent");
-
+    }
+    }
 
 },
 
@@ -508,6 +517,21 @@ var msg = notifications.ArmamentInFlightNotification.new("mfly", 78, 0?damage.DE
         {
             cdm = 0.2965 * math.pow(speed_m, -1.1506) + me.cd;
         }
+
+                # arm the sds
+        
+               if(me.life_time > 3) {
+            if(speed_m < getprop("controls/armament/missile/sdspeed")){
+                print("missile should die here");
+                    me.free = 1;
+                        setprop("payload/armament/flares", 0);
+                                        me.animate_explosion();
+                    settimer(func(){ me.del(); }, 1);
+                    setprop("sim/messages/atc", "missile self distructed");
+                    return;
+            }
+        }
+
         
         # add drag to the total speed using Standard Atmosphere
         # (15C sealevel temperature);
@@ -582,16 +606,13 @@ var msg = notifications.ArmamentInFlightNotification.new("mfly", 78, 0?damage.DE
    var OurAlt       = props.globals.getNode("position/altitude-ft");
 var OurLat       = props.globals.getNode("position/latitude-deg");
 var OurLon       = props.globals.getNode("position/longitude-deg");
-                # Missile is flying at target
-                # Lets tell out target hes in a sticky situation
-                 #   me.sendinflight(0,0,0); 
-                # hehehe
+
                 print("Still Tracking : Elevation ", me.track_signal_e, "Heading ", me.track_signal_h, " Gload : ", myG);
             }
         }
         #print("status :", me.status, "free ", me.free, "init_launch : ", init_launch);
         #print("**Altitude : ", alt_ft, " NextGroundElevation : ", me.nextGroundElevation, "Heading : ", hdg_deg, " **Pitch : ", pitch_deg, "**Speed : ", speed_m, " dt :", dt);
-        
+        me.sendinflight(1,1,1); 
         # get horizontal distance and set position and orientation.
         var dist_h_m = speed_horizontal_fps * dt * FT2M;
         me.coord.apply_course_distance(hdg_deg, dist_h_m);
@@ -1021,15 +1042,8 @@ var semiactive = 0;
                         #setprop("/sim/multiplay/chat", phrase);
                         #var typeID = 0;
     			var typeID = getprop("controls/armament/missile/typeid");
-                        if(me.NameOfMissile == "Aim-120"){me.NameOfMissile="Aim-120";typeID = 52;}
-                        if(me.NameOfMissile == "Aim-7"){me.NameOfMissile="Aim-7";typeID = 55;}
-                        if(me.NameOfMissile == "Aim-9x"){me.NameOfMissile="Aim-9x";typeID = 98;}
-                        if(me.NameOfMissile == "GBU-39"){me.NameOfMissile="GBU-39";typeID = 18;}  
-                        if(me.NameOfMissile == "JDAM"){me.NameOfMissile="JDAM";typeID = 35;}  
-                        if(me.NameOfMissile == "Aim-9m"){me.NameOfMissile="Aim-9m";typeID = 69;}  
-                        if(me.NameOfMissile == "XMAA"){me.NameOfMissile="XMAA";typeID = 59;}  # Aim-132      This XMAA is tempory. testing a longrange BVR missile Can only be accessed if the callsign is the developers callsign. AKA: me :D
-
-
+            if(me.NameOfMissile == "R-77"){me.NameOfMissile="R-77";typeID = 83;}
+                        if(me.NameOfMissile == "R-73"){me.NameOfMissile="R-73";typeID = 82;}
                         var msg = notifications.ArmamentNotification.new("mhit", 4, damage.DamageRecipient.typeID2emesaryID(typeID));
                         msg.RelativeAltitude = 0;
                         msg.Bearing = me.coord.course_to(geo.aircraft_position());

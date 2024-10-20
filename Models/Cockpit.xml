@@ -19,4 +19,28 @@
 		<path>Aircraft/T-50/Models/Panel/Panel.xml</path>
 	</model>
 	
+
+
+ <effect>
+  <inherits-from>Effects/model-transparent</inherits-from>
+  <!-- Replace 'HUD.l.canvas' with the object the canvas is placed on -->
+  <object-name>hud-glass</object-name>
+</effect>
+<animation>
+  <type>material</type>
+  <object-name>hud-glass</object-name>
+  <transparency>
+    <alpha>1</alpha>
+    <factor>1</factor>
+    <offset>0</offset>
+   </transparency>
+  <!--<emission>
+   <red>0.9</red>
+   <green>0.9</green>
+   <blue>0.9</blue>
+   <factor-prop>su-27/instrumentation/HUD/brightness</factor-prop>
+  </emission>-->
+ </animation>
+
+
 </PropertyList>

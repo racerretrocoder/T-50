@@ -2,15 +2,22 @@
 
     <path>R-77.ac</path>
     
-    <animation>
-        <type>select</type>
-        <object-name>r-77</object-name>
-        <condition>
-            <not>
-                <property>fdm/jsbsim/systems/armament/station4/released</property>
-            </not>
-        </condition>
-    </animation>
+	<animation>
+<type>select</type>
+<object-name>r-77</object-name>      
+<condition>
+<and>
+<equals>
+<property>sim/multiplay/generic/string[11]</property> <!--Sim weight station 5-->
+<value>R-77</value>
+</equals>
+<equals>
+<property>sim/multiplay/generic/bool[11]</property> <!--controls station 5 realease-->
+<value>false</value>
+</equals>
+</and>
+</condition>
+</animation>
 
     <animation>
         <type>range</type>

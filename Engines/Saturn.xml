@@ -3,6 +3,9 @@
   File:     Saturn_127.xml
   Author:   Aero-Matic v 0.81
 
+
+  not to scale. Thrust Is for testing only
+
   Inputs:
     name:           Saturn
     type:           turbine
@@ -12,7 +15,7 @@
 -->
 
 <turbine_engine name="Saturn">
-  <milthrust> 20200.0 </milthrust>
+  <milthrust> 30200.0 </milthrust>
   <maxthrust> 45300.0 </maxthrust>
   <bypassratio>     1.0 </bypassratio>
   <tsfc>            0.57 </tsfc>

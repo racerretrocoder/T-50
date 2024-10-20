@@ -2,15 +2,22 @@
 
     <path>R-74.ac</path>
     
-    <animation>
-        <type>select</type>
-        <object-name>r-74</object-name>
-        <condition>
-            <not>
-                <property>fdm/jsbsim/systems/armament/station6/released</property>
-            </not>
-        </condition>
-    </animation>
+<animation>
+<type>select</type>
+<object-name>r-74</object-name>      
+<condition>
+<and>
+<equals>
+<property>sim/multiplay/generic/string[16]</property>
+<value>R-73</value>
+</equals>
+<equals>
+<property>sim/multiplay/generic/bool[16]</property>
+<value>false</value>
+</equals>
+</and>
+</condition>
+</animation>
 
     <animation>
         <type>range</type>

@@ -30,7 +30,7 @@ fire_MG = func(b) {
             {
                 dt = time;
                 m2000_load. SelectNextPylon();
-                f22.fire(0,0); # Open the bay doors of the currently selected weapon
+                t50.fire(0,0); # Open the bay doors of the currently selected weapon
                 var pylon = getprop("/controls/armament/missile/current-pylon");
                 m2000_load.dropLoad(pylon);
                 print("Should fire Missile");

@@ -37,11 +37,11 @@
   <name>left-strake-vortex</name>
   <path>Aircraft/T-50/Models/Effects/strake-vortex.xml</path>
   <offsets>
-   <x-m>7.9</x-m>
-   <y-m>-1.3</y-m>
-   <z-m>0.2</z-m>
+   <x-m>8.5</x-m>
+   <y-m>-1.4</y-m>
+   <z-m>0.1</z-m>
 
-   <heading-deg>-10</heading-deg>
+   <heading-deg>-15</heading-deg>
   </offsets>
  </model>
 
@@ -49,11 +49,11 @@
   <name>right-strake-vortex</name>
   <path>Aircraft/T-50/Models/Effects/strake-vortex.xml</path>
   <offsets>
-   <x-m>7.9</x-m>
-   <y-m>1.3</y-m>
-   <z-m>0.2</z-m>
+   <x-m>8.5</x-m>
+   <y-m>1.4</y-m>
+   <z-m>0.1</z-m>
 
-   <heading-deg>10</heading-deg>
+   <heading-deg>15</heading-deg>
   </offsets>
  </model>
 
@@ -63,8 +63,8 @@
   <path>Aircraft/T-50/Models/Effects/g-vortex.xml</path>
   <offsets>
    <x-m>11.9</x-m>
-   <y-m>-2.3</y-m>
-   <z-m>0.2</z-m>
+   <y-m>-2.0</y-m>
+   <z-m>0.0</z-m>
 
    <heading-deg>-10</heading-deg>
   </offsets>
@@ -75,8 +75,8 @@
   <path>Aircraft/T-50/Models/Effects/g-vortex.xml</path>
   <offsets>
    <x-m>11.9</x-m>
-   <y-m>2.3</y-m>
-   <z-m>0.2</z-m>
+   <y-m>2.0</y-m>
+   <z-m>0.0</z-m>
 
    <heading-deg>10</heading-deg>
   </offsets>
@@ -90,7 +90,7 @@
   <offsets>
    <x-m>8.9</x-m>
    <y-m>0</y-m>
-   <z-m>0.2</z-m>
+   <z-m>0.0</z-m>
 
   </offsets>
  </model>
@@ -1173,7 +1173,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>right-small-bay-door</object-name>
-		<property>baydoors/position-norm</property>
+		<property>fdm/jsbsim/fcs/r73</property>
 		<interpolation>
 			<entry>
 				<ind>0.0</ind>
@@ -1201,7 +1201,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>left-small-bay-door</object-name>
-		<property>baydoors/position-norm</property>
+		<property>fdm/jsbsim/fcs/r73</property>
 		<interpolation>
 			<entry>
 				<ind>0.0</ind>
@@ -1229,7 +1229,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>right-front-weapon-door</object-name>
-		<property>baydoors/position-norm</property>
+		<property>fdm/jsbsim/fcs/r77</property>
 		<interpolation>
 			<entry>
 				<ind>0.0</ind>
@@ -1257,7 +1257,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>left-front-weapon-door</object-name>
-		<property>baydoors/position-norm</property>
+		<property>fdm/jsbsim/fcs/r77</property>
 		<interpolation>
 			<entry>
 				<ind>0.0</ind>
@@ -1285,7 +1285,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>right-back-weapon-door</object-name>
-		<property>baydoors/position-norm</property>
+		<property>fdm/jsbsim/fcs/r77</property>
 		<interpolation>
 			<entry>
 				<ind>0.0</ind>
@@ -1313,7 +1313,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>left-back-weapon-door</object-name>
-		<property>baydoors/position-norm</property>
+		<property>fdm/jsbsim/fcs/r77</property>
 		<interpolation>
 			<entry>
 				<ind>0.0</ind>

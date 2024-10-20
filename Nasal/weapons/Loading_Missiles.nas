@@ -19,64 +19,68 @@ var Loading_missile = func(name)
     var maxExplosionRange =  0;
     var maxspeed          = 0;
     var life              = 0;
+    var sdspeed           = 0;
     var fox               = "nothing";
     var rail              = "true";
     var cruisealt         = 0;
     var guidance	  = 0;
     var chute         = 1;
+        var flareres      = 1;          # Flare and chaff resistance. from 0 to 1 (decimals included) The closer to 1. the harder it is for the missile to fall for enemy chaff and flares
     
     
     if(name == "R-77")
     {
    
 	typeid = 83;
-        address = "Aircraft/T-50/Models/Stores/Missiles/R77/R77-smoke.xml";
-        NoSmoke = "Aircraft/T-50/Models/Stores/Missiles/R77/R77.xml";
+        address = "Aircraft/T-50/Models/Stores/Missiles/R77/R-77Smoke.xml";
+        NoSmoke = "Aircraft/T-50/Models/Stores/Missiles/R77/R-77.xml";
         Explosion = "Aircraft/T-50/Models/Effects/MissileExplosion/explosion.xml";
-        maxdetectionrngnm = 38.8;                    #  
-        fovdeg = 140;                                #
+        maxdetectionrngnm = 50.8;                    #  
+        fovdeg = 75;                                #
         detectionfovdeg = 140;                       # 
         trackmaxdeg = 140;                           # 
         maxg = 30;                                   # 
-        thrustlbs = 500;                             # 
-        thrustdurationsec = 120;                     # 
+        thrustlbs = 1800;                             # 
+        thrustdurationsec = 12;                     # 
         weightlaunchlbs = 291;
         weightwarheadlbs = 44;
-        dragcoeff = 0.3;                             # guess; original 0.05
-        dragarea = 0.056;                            # sq ft
+        dragcoeff = 0.03;                             # guess; original 0.05
+        dragarea = 0.076;                            # sq ft
         maxExplosionRange = 50;                      # in meter ! Due to the code, more the speed is important, more we need to have this figure high
-        maxspeed = 8.5;                              # In Mach
-        life = 1200;
+        maxspeed = 4.6;                              # In Mach
+        life = 1200000;
         fox = "Fox 3";
         rail = "false";
         cruisealt = 0;
         chute = 0;
+        sdspeed = 0.3;
     }
     elsif(name == "R-73")
     {
         # short-range A2A,IR seeker,
 	typeid = 82;
-        address = "Aircraft/T-50/Models/Stores/Missiles/R73/R73-smoke.xml";
-        NoSmoke = "Aircraft/T-50/Models/Stores/Missiles/R73/R73.xml";
+        address = "Aircraft/T-50/Models/Stores/Missiles/R73/R-73-smoke.xml";
+        NoSmoke = "Aircraft/T-50/Models/Stores/Missiles/R73/R-73.xml";
         Explosion = "Aircraft/T-50/Models/Effects/MissileExplosion/explosion.xml";
-        maxdetectionrngnm = 12;                       # Not real Impact yet A little more than the MICA
-        fovdeg = 80;                                 # seeker optical FOV
-        detectionfovdeg = 80;                        # Search pattern diameter (rosette scan)
-        trackmaxdeg = 80;                            # Seeker max total angular rotation
-        maxg = 50;                                    # Thurst vectoring rocket motor
-        thrustlbs = 800;                             # 
-        thrustdurationsec = 10;                        # To make it miss some times
-        weightlaunchlbs = 186;
-        weightwarheadlbs = 20.8;
-        dragcoeff = 0.8;                              # guess; original 0.05
+        maxdetectionrngnm = 12;                     # Not real Impact yet A little more than the MICA
+        fovdeg = 75;                                  # seeker optical FOV
+        detectionfovdeg = 180;                        # Search pattern diameter (rosette scan)
+        trackmaxdeg = 110;                            # Seeker max total angular rotation
+        maxg = 40;                                    # In turn less than the MICA, coz it don't have vectorial thurst
+        thrustlbs = 900;                              # guess
+        thrustdurationsec = 3;                       # Mk.36 Mod.7,8
+        weightlaunchlbs = 291;
+        weightwarheadlbs = 44;
+        dragcoeff = 0.088;                            # guess; original 0.05
         dragarea = 0.075;                             # sq ft
-        maxExplosionRange = 50;                       
-        maxspeed = 5;                                 # In Mach
-        life = 80;
+        maxExplosionRange = 50;                       # in meter !!Due to the code, more the speed is important, more we need to have this figure high
+        maxspeed = 3;                                 # In Mach
+        life = 1150000;
         fox = "Fox 2";
-        rail = "false";
+        rail = "true";
         cruisealt = 0;
         chute = 0;
+        sdspeed = 0.3;
     }
   
     elsif(name == "eject")   # Used for the ejction seat. Not a missile so we do fox one and leave it
@@ -129,9 +133,11 @@ var Loading_missile = func(name)
     setprop("controls/armament/missile/maxExplosionRange", maxExplosionRange);
     setprop("controls/armament/missile/maxspeed", maxspeed);
     setprop("controls/armament/missile/life", life);
+    setprop("controls/armament/missile/sdspeed", sdspeed);
     setprop("controls/armament/missile/fox", fox);
     setprop("controls/armament/missile/rail", rail);
     setprop("controls/armament/missile/cruise_alt", cruisealt);
     setprop("controls/armament/missile/type-id", typeid);
+    setprop("controls/armament/missile/flareres", flareres);
     return 1;
 }

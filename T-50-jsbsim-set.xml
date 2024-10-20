@@ -53,7 +53,9 @@
 			<radar-altimeter>
 				<limit-bug type="double">250</limit-bug>
 			</radar-altimeter>
-			
+			<rad>
+				<on type="bool">false</on>
+            </rad>
 			<warnings>
 				<master-caution type="bool">0</master-caution>
 			</warnings>
@@ -70,6 +72,7 @@
 			<generic> 
 				<int n="0" alias="/sim/crashed" />
 		  
+
 				<!-- Beacon on -->
 				<int n="1" alias="/controls/lighting/beacon" />
 				<!-- Landing lights on -->
@@ -95,8 +98,41 @@
  <float n="18" type="double" alias="/controls/engines/engine/throttle"/>	
  <float n="19" type="double" alias="/velocities/airspeed-kt"/><!--For the MP Sonic BOOM, Vapor, and more-->
 
+ <float n="20" alias="/controls/flight/aileron"/>
+ <float n="21" alias="/controls/flight/elevator"/>
+  <float n="22" alias="/controls/flight/rudder"/>
 				  <float n="31" type="double" alias="/engines/engine[0]/nozzle-pos-norm"/>	
  <float n="32" type="double" alias="/engines/engine[1]/nozzle-pos-norm"/>	
+
+<int n="12" type="int" alias="fdm/jsbsim/fcs/AIM120"/>
+
+  
+<int n="14" type="int" alias="fdm/jsbsim/fcs/AIM9X"/>
+
+<!--Missiles in bays on MP-->
+<string n="6" type="string"></string><!-- string 6 used by radar lock RWR warning -->
+<string n="10" type="string" alias="/sim/weight/selected"/> <!--Idk if this is ok for multiplayer. It seems good for now. ill make a nasal script thatll say INTS to lower mem usage: 1 for aim120. 2 for aim9 3 for GBU39 4 for extra 5 for extra-->
+<string n="11" type="string" alias="/sim/weight[1]/selected"/>
+<string n="12" type="string" alias="/sim/weight[2]/selected"/>
+<string n="13" type="string" alias="/sim/weight[3]/selected"/>
+<string n="14" type="string" alias="/sim/weight[4]/selected"/>
+<string n="15" type="string" alias="/sim/weight[5]/selected"/>
+<string n="16" type="string" alias="/sim/weight[6]/selected"/>
+<string n="17" type="string" alias="/sim/weight[7]/selected"/>
+<string n="18" type="string" alias="/sim/weight[8]/selected"/>
+<string n="19" type="string" alias="/sim/weight[9]/selected"/>
+
+<bool n="10" type="bool" alias="/controls/armament/station/release"/> <!--Idk if this is ok for multiplayer. It seems good for now. ill make a nasal script thatll say INTS to lower mem usage: 1 for aim120. 2 for aim9 3 for GBU39 4 for extra 5 for extra-->
+<bool n="11" type="bool" alias="/controls/armament/station[1]/release"/>
+<bool n="12" type="bool" alias="/controls/armament/station[2]/release"/>
+<bool n="13" type="bool" alias="/controls/armament/station[3]/release"/>
+<bool n="14" type="bool" alias="/controls/armament/station[4]/release"/>
+<bool n="15" type="bool" alias="/controls/armament/station[5]/release"/>
+<bool n="16" type="bool" alias="/controls/armament/station[6]/release"/>
+<bool n="17" type="bool" alias="/controls/armament/station[7]/release"/>
+<bool n="18" type="bool" alias="/controls/armament/station[8]/release"/>
+<bool n="19" type="bool" alias="/controls/armament/station[9]/release"/>
+
 				
 			</generic>
 
@@ -281,6 +317,13 @@
 				<menu n="100">
 					<label>T-50</label>
 					<enabled type="bool">true</enabled>
+							<item>
+			<label>Pylons loads</label>
+			<binding>
+				<command>nasal</command>
+				 <script>CanvasPylonsDlg.showPylonsDlg()</script>
+			</binding>
+		</item>
 					<item>
 						<label>Select Livery</label>
 						<binding>
@@ -300,97 +343,369 @@
 			</default>
 		</menubar>
 
-   <weight n="0">
-      <name>pylon1</name>
-      <weight-lb type="double"> 0 </weight-lb>
-      <selected>none</selected>
-      <offsets>
-    <x-m type="double"> -0.4  </x-m>
-    <y-m type="double"> 0.39 </y-m>
-    <z-m type="double"> -1.6 </z-m>
-      </offsets>
-      <opt><name>none</name>              <lbs type="double">    0.00 </lbs></opt>
-      <opt><name>R-27R</name>                           <lbs type="double">  230.21 </lbs></opt>
-      <opt><name>R-27ER</name>            <lbs type="double">  230.00 </lbs></opt>
-      <opt><name>R-27T</name>                 <lbs type="double">  230.91 </lbs></opt>
-      <opt><name>R-27ET</name>            <lbs type="double">  230.00 </lbs></opt>
-      <opt><name>R-77</name>              <lbs type="double">  230.00 </lbs></opt>
-    </weight>
+   
+        <weight n="0">
+            <name>pylon1</name>
+            <weight-lb type="double"> 0 </weight-lb>
+            <selected>none</selected>
+            <offsets>
+                <x-m type="double"> 11.55 </x-m>
+                <y-m type="double"> 0.0 </y-m>
+                <z-m type="double"> -0.404 </z-m>
+            </offsets>
+            <opt>
+                <name>none</name>
+                <lbs type="double"> 0.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-27R</name>
+                <lbs type="double"> 230.21 </lbs>
+            </opt>
+            <opt>
+                <name>R-27ER</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-27T</name>
+                <lbs type="double"> 230.91 </lbs>
+            </opt>
+            <opt>
+                <name>R-27ET</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-77</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+        </weight>
 
-    <weight n="1">
-      <name>pylon2</name>
-      <weight-lb type="double"> 0 </weight-lb>
-      <selected>none</selected>
-      <offsets>
-    <x-m type="double"> -0.4  </x-m>
-    <y-m type="double"> 0.67 </y-m>
-    <z-m type="double"> -1.6 </z-m>
-      </offsets>
-      <opt><name>none</name>              <lbs type="double">    0.00 </lbs></opt>
-      <opt><name>R-27R</name>                           <lbs type="double">  230.21 </lbs></opt>
-      <opt><name>R-27ER</name>            <lbs type="double">  230.00 </lbs></opt>
-      <opt><name>R-27T</name>                 <lbs type="double">  230.91 </lbs></opt>
-      <opt><name>R-27ET</name>            <lbs type="double">  230.00 </lbs></opt>
-      <opt><name>R-77</name>              <lbs type="double">  230.00 </lbs></opt>
-    </weight>
+        <weight n="1">
+            <name>pylon2</name>
+            <weight-lb type="double"> 0 </weight-lb>
+            <selected>none</selected>
+            <offsets>
+			<x-m>10.6189</x-m>
+			<y-m>0.2794</y-m>
+			<z-m>-0.4602</z-m>
+                <x-m type="double">16.3143</x-m>
+                <y-m type="double">0.2794</y-m>
+                <z-m type="double">-0.1766</z-m>
+            </offsets>
+            <opt>
+                <name>none</name>
+                <lbs type="double"> 0.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-27R</name>
+                <lbs type="double"> 230.21 </lbs>
+            </opt>
+            <opt>
+                <name>R-27ER</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-27T</name>
+                <lbs type="double"> 230.91 </lbs>
+            </opt>
+            <opt>
+                <name>R-27ET</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-77</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+        </weight>
 
-    <weight n="2">
-      <name>pylon3</name>
-      <tank>2</tank>
-      <weight-lb type="double"> 0 </weight-lb>
-      <offsets>
-          <x-m type="double"> 2.1 </x-m>
-          <y-m type="double"> -3.4 </y-m>
-          <z-m type="double"> -1.1 </z-m>
-      </offsets>
-      <selected>none</selected>
-      <opt><name>none</name>              <lbs type="double">    0.00 </lbs></opt>
-      <opt><name>R-27R</name>                           <lbs type="double">  230.21 </lbs></opt>
-      <opt><name>R-27ER</name>            <lbs type="double">  230.00 </lbs></opt>
-      <opt><name>R-27T</name>                 <lbs type="double">  230.91 </lbs></opt>
-      <opt><name>R-27ET</name>            <lbs type="double">  230.00 </lbs></opt>
-      <opt><name>R-77</name>              <lbs type="double">  230.00 </lbs></opt>
-    </weight>
+        <weight n="2">
+            <name>pylon3</name>
+            <tank>2</tank>
+            <weight-lb type="double"> 0 </weight-lb>
+            <offsets>
+                <x-m type="double"> 14.000 </x-m>
+                <y-m type="double"> -4.836 </y-m>
+                <z-m type="double"> -0.24  </z-m>
+            </offsets>
+            <selected>none</selected>
+            <opt>
+                <name>none</name>
+                <lbs type="double"> 0.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-27R</name>
+                <lbs type="double"> 230.21 </lbs>
+            </opt>
+            <opt>
+                <name>R-27ER</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-27T</name>
+                <lbs type="double"> 230.91 </lbs>
+            </opt>
+            <opt>
+                <name>R-27ET</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-77</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+        </weight>
 
-    <weight n="3">
-      <name>pylon4</name>
-      <weight-lb type="double"> 0 </weight-lb>
-      <selected>none</selected>
-      <offsets>
-    <x-m type="double"> -0.4  </x-m>
-    <y-m type="double"> -0.67 </y-m>
-    <z-m type="double"> -1.6 </z-m>
-      </offsets>
-    </weight>
+        <weight n="3">
+            <name>pylon4</name>
+            <weight-lb type="double"> 0 </weight-lb>
+            <selected>none</selected>
+            <offsets>
+                <x-m type="double">10.6189</x-m>
+                <y-m type="double">-0.2794</y-m>
+                <z-m type="double">-0.4602</z-m>
+            </offsets>
+            <opt>
+                <name>none</name>
+                <lbs type="double"> 0.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-27R</name>
+                <lbs type="double"> 230.21 </lbs>
+            </opt>
+            <opt>
+                <name>R-27ER</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-27T</name>
+                <lbs type="double"> 230.91 </lbs>
+            </opt>
+            <opt>
+                <name>R-27ET</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-77</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+        </weight>
 
-    <weight n="4">
-      <name>pylon5</name>
-      <weight-lb type="double"> 0 </weight-lb>
-      <selected>none</selected>
-      <offsets>
-          <x-m type="double"> 2.1 </x-m>
-          <y-m type="double"> 3.4 </y-m>
-          <z-m type="double"> -1.1 </z-m>
-      </offsets>
-    </weight>
+        <weight n="4">
+            <name>pylon5</name>
+            <weight-lb type="double"> 0 </weight-lb>
+            <selected>none</selected>
+            <offsets>
+                <x-m type="double"> 14.800 </x-m>
+                <y-m type="double"> -6.490 </y-m>
+                <z-m type="double"> -0.02  </z-m>
+            </offsets>
+            <opt>
+                <name>none</name>
+                <lbs type="double"> 0.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-27R</name>
+                <lbs type="double"> 230.21 </lbs>
+            </opt>
+            <opt>
+                <name>R-27ER</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-27T</name>
+                <lbs type="double"> 230.91 </lbs>
+            </opt>
+            <opt>
+                <name>R-27ET</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-77</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+        </weight>
 
-    <weight n="5">
-      <name>pylon6</name>
-      <weight-lb type="double"> 0 </weight-lb>
-      <selected>none</selected>
-      <offsets>
-    <x-m type="double"> -0.4  </x-m>
-    <y-m type="double"> -0.95 </y-m>
-    <z-m type="double"> -1.6 </z-m>
-      </offsets>
-      <opt><name>none</name>              <lbs type="double">    0.00 </lbs></opt>
-      <opt><name>R-27R</name>                           <lbs type="double">  230.21 </lbs></opt>
-      <opt><name>R-27ER</name>            <lbs type="double">  230.00 </lbs></opt>
-      <opt><name>R-27T</name>                 <lbs type="double">  230.91 </lbs></opt>
-      <opt><name>R-27ET</name>            <lbs type="double">  230.00 </lbs></opt>
-      <opt><name>R-77</name>              <lbs type="double">  230.00 </lbs></opt>
-    </weight>
+        <weight n="5">
+            <name>pylon6</name>
+            <weight-lb type="double"> 0 </weight-lb>
+            <selected>none</selected>
+            <offsets>
+                <x-m type="double"> 10.6189 </x-m>
+                <y-m type="double">0.2794</y-m>
+                <z-m type="double"> -0.4602 </z-m>
+            </offsets>
+            <opt>
+                <name>none</name>
+                <lbs type="double"> 0.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-27R</name>
+                <lbs type="double"> 230.21 </lbs>
+            </opt>
+            <opt>
+                <name>R-27ER</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-27T</name>
+                <lbs type="double"> 230.91 </lbs>
+            </opt>
+            <opt>
+                <name>R-27ET</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-77</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+        </weight>
 
+        <weight n="6">
+            <name>pylon7</name>
+            <weight-lb type="double"> 0 </weight-lb>
+            <selected>none</selected>
+            <offsets>
+                <x-m type="double"> 11.4105</x-m>
+                <y-m type="double">  2.7835</y-m>
+                <z-m type="double"> -0.3099</z-m>
+            </offsets>
+            <opt>
+                <name>none</name>
+                <lbs type="double"> 0.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-27R</name>
+                <lbs type="double"> 230.21 </lbs>
+            </opt>
+            <opt>
+                <name>R-27ER</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-27T</name>
+                <lbs type="double"> 230.91 </lbs>
+            </opt>
+            <opt>
+                <name>R-27ET</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-77</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-73</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+        </weight>
+
+        <weight n="7">
+            <name>pylon8</name>
+            <weight-lb type="double"> 0 </weight-lb>
+            <selected>none</selected>
+            <offsets>
+                <x-m type="double"> 11.4105 </x-m>
+                <y-m type="double"> -2.7835 </y-m>
+                <z-m type="double"> -0.3099 </z-m>
+            </offsets>
+            <opt>
+                <name>none</name>
+                <lbs type="double"> 0.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-27R</name>
+                <lbs type="double"> 230.21 </lbs>
+            </opt>
+            <opt>
+                <name>R-27ER</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-27T</name>
+                <lbs type="double"> 230.91 </lbs>
+            </opt>
+            <opt>
+                <name>R-27ET</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-77</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-73</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+        </weight>
+
+        <weight n="8">
+            <name>pylon9</name>
+            <weight-lb type="double"> 0 </weight-lb>
+            <selected>none</selected>
+            <offsets>
+                <x-m type="double"> 13.550 </x-m>
+                <y-m type="double"> -1.235 </y-m>
+                <z-m type="double"> -1.324 </z-m>
+            </offsets>
+            <opt>
+                <name>none</name>
+                <lbs type="double"> 0.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-27R</name>
+                <lbs type="double"> 230.21 </lbs>
+            </opt>
+            <opt>
+                <name>R-27ER</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-27T</name>
+                <lbs type="double"> 230.91 </lbs>
+            </opt>
+            <opt>
+                <name>R-27ET</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-77</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+        </weight>
+
+        <weight n="9">
+            <name>pylon10</name>
+            <weight-lb type="double"> 0 </weight-lb>
+            <selected>none</selected>
+            <offsets>
+                <x-m type="double"> 16.3143</x-m>
+                <y-m type="double">-0.2794</y-m>
+                <z-m type="double"> -0.1766</z-m>
+            </offsets>
+            <opt>
+                <name>none</name>
+                <lbs type="double"> 0.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-27R</name>
+                <lbs type="double"> 230.21 </lbs>
+            </opt>
+            <opt>
+                <name>R-27ER</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-27T</name>
+                <lbs type="double"> 230.91 </lbs>
+            </opt>
+            <opt>
+                <name>R-27ET</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+            <opt>
+                <name>R-77</name>
+                <lbs type="double"> 230.00 </lbs>
+            </opt>
+
+        </weight>
 
 	</sim>
 	<payload>
@@ -585,7 +900,10 @@
 			<instruments-norm>0.3</instruments-norm>
 		</lighting>
 
-
+<baydoors>
+<AIM120 type="int">0</AIM120>
+<AIM9X type="int">0</AIM9X> <!--TODO: reverse aim-9x animations so that 1 is not closed. change this in F-22.nas too-->
+</baydoors>
 
 			  <armament>
 
@@ -610,7 +928,7 @@
 <eject>
       <current-pylon type="int"> 0 </current-pylon>
 </eject>
-
+      <flareres type="double"> 0.80 </flareres>
       <name>None_press_m</name>
       <type-id type="int">57</type-id>
       <address>Aircraft/SU-27SK/Models/Stores/Missiles/R-27R/R-27R.xml</address>
@@ -650,6 +968,7 @@
       <maxspeed type="double"> 4 </maxspeed>
       <!-- ' in Mach -->
       <life> 60 </life>
+      <sdspeed> 60 </sdspeed>
       <!--
         note :
           "Fox1" for guided by the aircraft radar (semi active) AIM7,
@@ -768,7 +1087,20 @@
 	
 	<input>
 		<keyboard>
+<key n="108">
+	 <name>l</name>
+     <desc>Trigger flare release</desc>
+    <!--This puts out ALOT of flares. I love it!-->
+      <binding>
+     <command>nasal</command>
+ <script>setprop("/ai/submodels/submodel/flare-release",1);t50.flares();damage.flare_released();settimer(func{setprop("/ai/submodels/submodel/flare-release",0);},0.1)</script>
+      </binding>
+  <binding>
+   <command>property-toggle</command>
+   <property>controls/flare</property>
+  </binding>
 
+    </key>
 	 <key n="114">
   <name>r</name>
   <desc>Switch Radar Range</desc>
@@ -786,7 +1118,7 @@
 </binding>
  </key> 
 
-		<key n="101">
+ <key n="101">
   <name>e</name>
   <desc>Fire selected WCS weapon</desc>
   <binding>
@@ -798,12 +1130,9 @@
       <command>nasal</command>
       <script>guns.stopFiring();</script>
     </binding>
-    <binding>
-      <command>nasal</command>
-      <script>setprop("/controls/armament/missile-trigger", 0);</script>
-    </binding>
   </mod-up>
  </key>
+ 
 
  <key n="109">
   <name>m</name>
@@ -824,11 +1153,23 @@
   <binding><command>nasal</command><script>screen.log.write("Selected " ~ getprop("controls/armament/selected-weapon"),0.5,0.5,1);</script></binding>
  </key> 
 			<key n="4">
-				<name>Ctrl-d</name>
-				<desc>Toggle baydoors</desc>
+				<name>Ctrl-D</name>
+				<desc>Open/close baydoors</desc>
 				<binding>
-					<command>nasal</command>
-					<script>baydoors.baydoors_switch(2)</script>
+					<command>property-cycle</command>
+					<property>controls/baydoors/AIM120</property>
+<value>0</value>
+<value>1</value> <!--i should move this to the FDM so i can make a nice smooth value-->
+				</binding>
+			</key>
+					<key n="6">
+				<name>Ctrl-F</name>
+				<desc>Open/close baydoors (aim-9x)</desc>
+				<binding>
+					<command>property-cycle</command>
+					<property>controls/baydoors/AIM9X</property>
+<value>0</value>
+<value>1</value> <!--i should move this to the FDM so i can make a nice smooth value-->
 				</binding>
 			</key>
 
@@ -860,41 +1201,9 @@
  <value>1</value>
  <value>2</value>
 </binding>
- </key> 	
+ </key>
             
-			<key n="101">
-				<name>e</name>
-				<desc>Release selected store</desc>
-				<binding>
-					<command>property-assign</command>
-					<property>fdm/jsbsim/systems/armament/release</property>
-					<value>1</value>
-				</binding>
-				<mod-up>
-					<binding>
-						<command>property-assign</command>
-						<property>fdm/jsbsim/systems/armament/release</property>
-						<value>0</value> 
-					</binding>
-				</mod-up>
-			</key>
-            
-			<key n="102">
-				<name>f</name>
-				<desc>Gun trigger</desc> 
-				<binding>
-					<command>property-assign</command>
-					<property>controls/armament/trigger</property>
-					<value>true</value>
-				</binding>
-				<mod-up>
-					<binding>
-						<command>property-assign</command>
-						<property>controls/armament/trigger</property>
-						<value>false</value>
-					</binding> 
-				</mod-up>
-			</key>
+
 
 			<key n="106">
 				<name>j</name>
@@ -987,6 +1296,8 @@
 		<t50>
 			<file>Aircraft/T-50/Nasal/radarinit.nas</file>
 
+			<file>Aircraft/T-50/Nasal/T-50.nas</file>
+
 		</t50>
 
 
@@ -1031,6 +1342,10 @@
 			<file>Aircraft/T-50/Nasal/maintenance.nas</file>
 		</maintenance>
 	
+
+      <canvas_HUD>
+            <file>Aircraft/T-50/Nasal/Chud.nas</file>
+    </canvas_HUD> 
 		<terrain-map>
 			<file>Aircraft/T-50/Nasal/terrain-map.nas</file>
 		</terrain-map>

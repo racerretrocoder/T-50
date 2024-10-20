@@ -1,5 +1,5 @@
 AC3Db
-MATERIAL "BurnerFlame" rgb 0.8 0.8 0.8  amb 0.8 0.8 0.8  emis 0.396 0.396 0.396  spec 1 1 1  shi 0  trans 0
+MATERIAL "ac3dmat3" rgb 1 0 0  amb 0.2 0.2 0.2  emis 0 0 0  spec 0.2 0.2 0.2  shi 128  trans 0
 OBJECT world
 kids 5
 OBJECT poly

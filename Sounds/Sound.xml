@@ -2,6 +2,572 @@
 
 <PropertyList>
  <fx>
+ <engine>
+   <name>interior engine1 mil</name>
+   <mode>looped</mode>
+   <path>Aircraft/T-50/Sounds/abint.wav</path>
+   <condition>
+
+<greater-than>  
+ <property>engines/engine[0]/n1</property>
+   <value>90</value>
+  </greater-than>
+
+  <property>/sim/current-view/internal</property>
+     <not>
+<property>/engines/engine/out-of-fuel</property>
+     </not>
+   </condition>
+   <position>
+    	<x>-4.5</x>
+	<y>0.0</y>
+	<z>-5</z>
+   </position>
+      <volume>
+    <property>/engines/engine/nozzle-pos-norm</property>
+    <factor>1</factor>
+    <offset>0</offset>
+   </volume>
+  <!--  <pitch>
+                <property>engines/engine[0]/n1</property>
+                <offset>0.86349949816</offset>
+                <factor>0.00455001673</factor>
+            </pitch> -->
+  </engine>
+
+   <engine>
+   <name>interior engine2 mil</name>
+   <mode>looped</mode>
+   <path>Aircraft/T-50/Sounds/abint.wav</path>
+   <condition>
+
+<greater-than>  
+ <property>engines/engine[1]/n1</property>
+   <value>90</value>
+  </greater-than>
+
+  <property>/sim/current-view/internal</property>
+     <not>
+<property>/engines/engine/out-of-fuel</property>
+     </not>
+   </condition>
+   <position>
+    	<x>-4.5</x>
+	<y>0.0</y>
+	<z>-5</z>
+   </position>
+      <volume>
+    <property>/engines/engine/nozzle-pos-norm</property>
+    <factor>1</factor>
+    <offset>0</offset>
+   </volume>
+  <!--  <pitch>
+                <property>engines/engine[0]/n1</property>
+                <offset>0.86349949816</offset>
+                <factor>0.00455001673</factor>
+            </pitch> -->
+  </engine>
+
+
+
+<engine>
+   <name>interior engine1 mil</name>
+   <mode>looped</mode>
+   <path>Aircraft/T-50/Sounds/abint.wav</path>
+   <condition>
+
+<greater-than>  
+ <property>engines/engine[0]/n1</property>
+   <value>90</value>
+  </greater-than>
+
+  <property>/sim/current-view/internal</property>
+     <not>
+<property>/engines/engine/out-of-fuel</property>
+     </not>
+   </condition>
+   <position>
+    	<x>-4.5</x>
+	<y>0.0</y>
+	<z>-5</z>
+   </position>
+      <volume>
+    <property>/engines/engine/nozzle-pos-norm</property>
+    <factor>1</factor>
+    <offset>0</offset>
+   </volume>
+  <!--  <pitch>
+                <property>engines/engine[0]/n1</property>
+                <offset>0.86349949816</offset>
+                <factor>0.00455001673</factor>
+            </pitch> -->
+  </engine>
+
+   <engine>
+   <name>interior engine2 mil</name>
+   <mode>looped</mode>
+   <path>Aircraft/T-50/Sounds/abint.wav</path>
+   <condition>
+
+<greater-than>  
+ <property>engines/engine[1]/n1</property>
+   <value>90</value>
+  </greater-than>
+
+  <property>/sim/current-view/internal</property>
+     <not>
+<property>/engines/engine/out-of-fuel</property>
+     </not>
+   </condition>
+   <position>
+    	<x>-4.5</x>
+	<y>0.0</y>
+	<z>-5</z>
+   </position>
+      <volume>
+    <property>/engines/engine/nozzle-pos-norm</property>
+    <factor>1</factor>
+    <offset>0</offset>
+   </volume>
+  <!--  <pitch>
+                <property>engines/engine[0]/n1</property>
+                <offset>0.86349949816</offset>
+                <factor>0.00455001673</factor>
+            </pitch> -->
+  </engine>
+
+
+
+
+
+
+
+
+  <engine>
+   <name>ab34</name>
+   <mode>looped</mode>
+   <path>Aircraft/T-50/Sounds/AB.wav</path>
+   <condition>
+
+<greater-than>  
+ <property>engines/engine[1]/n1</property>
+   <value>90</value>
+  </greater-than>
+
+  
+     <not>
+	 <property>/sim/current-view/internal</property>
+<property>/engines/engine/out-of-fuel</property>
+     </not>
+   </condition>
+   <position>
+    	<x>0</x>
+	<y>0.0</y>
+	<z>0</z>
+   </position>
+               <orientation>
+                <x>1.0</x>
+                <y>0.001</y>
+                <z>0.001</z>
+                <inner-angle>180.0</inner-angle>
+                <outer-angle>180.0</outer-angle>
+                <outer-gain>0.0</outer-gain>
+            </orientation>
+      <volume>
+    <property>/engines/engine/nozzle-pos-norm</property>
+    <factor>1</factor>
+    <offset>0</offset>
+   </volume>
+  <!--  <pitch>
+                <property>engines/engine[0]/n1</property>
+                <offset>0.86349949816</offset>
+                <factor>0.00455001673</factor>
+            </pitch> -->
+  </engine>
+
+
+
+  <engine>
+   <name>ab34s</name>
+   <mode>looped</mode>
+   <path>Aircraft/T-50/Sounds/AB.wav</path>
+   <condition>
+
+<greater-than>  
+ <property>engines/engine[1]/n1</property>
+   <value>90</value>
+  </greater-than>
+
+  
+     <not>
+	 <property>/sim/current-view/internal</property>
+<property>/engines/engine/out-of-fuel</property>
+     </not>
+   </condition>
+   <position>
+    	<x>0</x>
+	<y>0.0</y>
+	<z>0</z>
+   </position>
+               <orientation>
+                <x>1.0</x>
+                <y>0.001</y>
+                <z>0.001</z>
+                <inner-angle>180.0</inner-angle>
+                <outer-angle>180.0</outer-angle>
+                <outer-gain>0.0</outer-gain>
+            </orientation>
+      <volume>
+    <property>/engines/engine/nozzle-pos-norm</property>
+    <factor>1</factor>
+    <offset>0</offset>
+   </volume>
+  <!--  <pitch>
+                <property>engines/engine[0]/n1</property>
+                <offset>0.86349949816</offset>
+                <factor>0.00455001673</factor>
+            </pitch> -->
+  </engine>
+
+
+
+
+  <engine>
+   <name>ab34g</name>
+   <mode>looped</mode>
+   <path>Aircraft/T-50/Sounds/AB.wav</path>
+   <condition>
+
+<greater-than>  
+ <property>engines/engine[1]/n1</property>
+   <value>90</value>
+  </greater-than>
+
+  
+     <not>
+	 <property>/sim/current-view/internal</property>
+<property>/engines/engine/out-of-fuel</property>
+     </not>
+   </condition>
+   <position>
+    	<x>0</x>
+	<y>0.0</y>
+	<z>0</z>
+   </position>
+               <orientation>
+                <x>1.0</x>
+                <y>0.001</y>
+                <z>0.001</z>
+                <inner-angle>180.0</inner-angle>
+                <outer-angle>180.0</outer-angle>
+                <outer-gain>0.0</outer-gain>
+            </orientation>
+      <volume>
+    <property>/engines/engine/nozzle-pos-norm</property>
+    <factor>1</factor>
+    <offset>0</offset>
+   </volume>
+  <!--  <pitch>
+                <property>engines/engine[0]/n1</property>
+                <offset>0.86349949816</offset>
+                <factor>0.00455001673</factor>
+            </pitch> -->
+  </engine>
+
+
+    <engine>
+   <name>ab2</name>
+   <mode>looped</mode>
+   <path>Aircraft/T-50/Sounds/ab2.wav</path>
+   <condition>
+
+<greater-than>  
+ <property>engines/engine[1]/n1</property>
+   <value>90</value>
+  </greater-than>
+
+  
+     <not>
+	 <property>/sim/current-view/internal</property>
+<property>/engines/engine/out-of-fuel</property>
+     </not>
+   </condition>
+   <position>
+    	<x>0</x>
+	<y>0.0</y>
+	<z>0</z>
+   </position>
+               <orientation>
+                <x>1.0</x>
+                <y>0.001</y>
+                <z>0.001</z>
+                <inner-angle>180.0</inner-angle>
+                <outer-angle>180.0</outer-angle>
+                <outer-gain>0.0</outer-gain>
+            </orientation>
+      <volume>
+    <property>/engines/engine/nozzle-pos-norm</property>
+    <factor>1</factor>
+    <offset>0</offset>
+   </volume>
+  <!--  <pitch>
+                <property>engines/engine[0]/n1</property>
+                <offset>0.86349949816</offset>
+                <factor>0.00455001673</factor>
+            </pitch> -->
+  </engine>
+    <engine>
+   <name>AB2</name>
+   <mode>looped</mode>
+   <path>Aircraft/T-50/Sounds/ab1.wav</path>
+   <condition>
+
+<greater-than>  
+ <property>engines/engine[1]/n1</property>
+   <value>90</value>
+  </greater-than>
+
+  
+     <not>
+	 <property>/sim/current-view/internal</property>
+<property>/engines/engine/out-of-fuel</property>
+     </not>
+   </condition>
+   <position>
+    	<x>0</x>
+	<y>0.0</y>
+	<z>0</z>
+   </position>
+               <orientation>
+                <x>1.0</x>
+                <y>0.001</y>
+                <z>0.001</z>
+                <inner-angle>180.0</inner-angle>
+                <outer-angle>180.0</outer-angle>
+                <outer-gain>0.0</outer-gain>
+            </orientation>
+      <volume>
+    <property>/engines/engine/nozzle-pos-norm</property>
+    <factor>1</factor>
+    <offset>0</offset>
+   </volume>
+  <!--  <pitch>
+                <property>engines/engine[0]/n1</property>
+                <offset>0.86349949816</offset>
+                <factor>0.00455001673</factor>
+            </pitch> -->
+  </engine>
+    <engine>
+   <name>ab2a</name>
+   <mode>looped</mode>
+   <path>Aircraft/T-50/Sounds/ab1.wav</path>
+   <condition>
+
+<greater-than>  
+ <property>engines/engine[1]/n1</property>
+   <value>90</value>
+  </greater-than>
+
+  
+     <not>
+	 <property>/sim/current-view/internal</property>
+<property>/engines/engine/out-of-fuel</property>
+     </not>
+   </condition>
+   <position>
+    	<x>0</x>
+	<y>0.0</y>
+	<z>0</z>
+   </position>
+               <orientation>
+                <x>1.0</x>
+                <y>0.001</y>
+                <z>0.001</z>
+                <inner-angle>180.0</inner-angle>
+                <outer-angle>180.0</outer-angle>
+                <outer-gain>0.0</outer-gain>
+            </orientation>
+      <volume>
+    <property>/engines/engine/nozzle-pos-norm</property>
+    <factor>1</factor>
+    <offset>0</offset>
+   </volume>
+  <!--  <pitch>
+                <property>engines/engine[0]/n1</property>
+                <offset>0.86349949816</offset>
+                <factor>0.00455001673</factor>
+            </pitch> -->
+  </engine>
+    <engine>
+   <name>AB2a</name>
+   <mode>looped</mode>
+   <path>Aircraft/T-50/Sounds/ab2.wav</path>
+   <condition>
+
+<greater-than>  
+ <property>engines/engine[1]/n1</property>
+   <value>90</value>
+  </greater-than>
+
+  
+     <not>
+	 <property>/sim/current-view/internal</property>
+<property>/engines/engine/out-of-fuel</property>
+     </not>
+   </condition>
+   <position>
+    	<x>0</x>
+	<y>0.0</y>
+	<z>0</z>
+   </position>
+               <orientation>
+                <x>1.0</x>
+                <y>0.001</y>
+                <z>0.001</z>
+                <inner-angle>180.0</inner-angle>
+                <outer-angle>180.0</outer-angle>
+                <outer-gain>0.0</outer-gain>
+            </orientation>
+      <volume>
+    <property>/engines/engine/nozzle-pos-norm</property>
+    <factor>1</factor>
+    <offset>0</offset>
+   </volume>
+  <!--  <pitch>
+                <property>engines/engine[0]/n1</property>
+                <offset>0.86349949816</offset>
+                <factor>0.00455001673</factor>
+            </pitch> -->
+  </engine>
+    <engine>
+   <name>ab2d</name>
+   <mode>looped</mode>
+   <path>Aircraft/T-50/Sounds/ab2.wav</path>
+   <condition>
+
+<greater-than>  
+ <property>engines/engine[1]/n1</property>
+   <value>90</value>
+  </greater-than>
+
+  
+     <not>
+	 <property>/sim/current-view/internal</property>
+<property>/engines/engine/out-of-fuel</property>
+     </not>
+   </condition>
+   <position>
+    	<x>0</x>
+	<y>0.0</y>
+	<z>0</z>
+   </position>
+               <orientation>
+                <x>1.0</x>
+                <y>0.001</y>
+                <z>0.001</z>
+                <inner-angle>180.0</inner-angle>
+                <outer-angle>180.0</outer-angle>
+                <outer-gain>0.0</outer-gain>
+            </orientation>
+      <volume>
+    <property>/engines/engine/nozzle-pos-norm</property>
+    <factor>1</factor>
+    <offset>0</offset>
+   </volume>
+  <!--  <pitch>
+                <property>engines/engine[0]/n1</property>
+                <offset>0.86349949816</offset>
+                <factor>0.00455001673</factor>
+            </pitch> -->
+  </engine>
+    <engine>
+   <name>AB2d</name>
+   <mode>looped</mode>
+   <path>Aircraft/T-50/Sounds/ab2.wav</path>
+   <condition>
+
+<greater-than>  
+ <property>engines/engine[1]/n1</property>
+   <value>90</value>
+  </greater-than>
+
+  
+     <not>
+	 <property>/sim/current-view/internal</property>
+<property>/engines/engine/out-of-fuel</property>
+     </not>
+   </condition>
+   <position>
+    	<x>0</x>
+	<y>0.0</y>
+	<z>0</z>
+   </position>
+               <orientation>
+                <x>1.0</x>
+                <y>0.001</y>
+                <z>0.001</z>
+                <inner-angle>180.0</inner-angle>
+                <outer-angle>180.0</outer-angle>
+                <outer-gain>0.0</outer-gain>
+            </orientation>
+      <volume>
+    <property>/engines/engine/nozzle-pos-norm</property>
+    <factor>1</factor>
+    <offset>0</offset>
+   </volume>
+  <!--  <pitch>
+                <property>engines/engine[0]/n1</property>
+                <offset>0.86349949816</offset>
+                <factor>0.00455001673</factor>
+            </pitch> -->
+  </engine>
+
+
+ <!--Mil Thrust Wind Jet-->
+
+
+ 
+
+	<engine>
+      <name>engine11a</name>
+      <path>Aircraft/T-50/Sounds/mil.wav</path>
+      <mode>looped</mode>
+      <condition>
+        <property>engines/engine[1]/running</property>
+		<not>
+        	<property>/sim/current-view/internal</property>
+		<property>engines/engine/out-of-fuel</property>
+     	</not>
+      </condition>
+       <position>
+    <x>18.6</x>
+	<y>0.4</y>
+	<z>2.37</z>
+   </position>
+   <orientation>
+	<x>1.0</x>
+    <y>0.0</y>
+    <z>0</z>
+    <inner-angle>35.0</inner-angle>
+    <outer-angle>90</outer-angle>
+    <outer-gain>0.45</outer-gain>
+   </orientation>
+ 
+   <volume>
+    <property>fdm/jsbsim/fcs/mil</property>
+    <factor>0.024</factor>
+    <offset>-0.45</offset>
+   </volume>
+    <pitch>
+        <property>engines/engine/n2</property>
+	<factor>0.005</factor>
+	<min>-1</min>
+	<max>0</max>
+   </pitch>
+
+    </engine>
+
+
 
   <engine>
    <name>interior engine11</name>
@@ -20,7 +586,7 @@
    </position>
   
    <volume>
-    	<property>engines/engine/n2</property>
+    	<property>fdm/jsbsim/fcs/N2SOUND</property>
     	<factor>0.08</factor>
 	<min>0.0</min>
 	<max>1.0</max>
@@ -52,7 +618,7 @@
    </position>
   
    <volume>
-    	<property>engines/engine/n2</property>
+    	<property>fdm/jsbsim/fcs/N2SOUND</property>
     	<factor>0.08</factor>
 	<min>0.0</min>
 	<max>1.0</max>
@@ -87,7 +653,7 @@
    </position>
   
    <volume>
-    	<property>engines/engine[1]/n2</property>
+    	<property>fdm/jsbsim/fcs/N2SOUND</property>
     	<factor>0.08</factor>
 	<min>0.0</min>
 	<max>1.0</max>
@@ -118,7 +684,7 @@
    </position>
   
    <volume>
-    	<property>engines/engine[1]/n2</property>
+    	<property>fdm/jsbsim/fcs/N2SOUND</property>
     	<factor>0.08</factor>
 	<min>0.0</min>
 	<max>1.0</max>
@@ -155,7 +721,7 @@
     	<outer-gain>0.4</outer-gain>
    </orientation>
    <volume>
-    	<property>engines/engine[0]/n2</property>
+    	<property>fdm/jsbsim/fcs/N2SOUND</property>
     	<factor>0.05</factor>
 	<min>0.0</min>
 	<max>0.5</max>
@@ -194,7 +760,7 @@
     	<outer-gain>0.4</outer-gain>
    </orientation>
    <volume>
-    	<property>engines/engine[1]/n2</property>
+    	<property>fdm/jsbsim/fcs/N2SOUND</property>
     	<factor>0.05</factor>
 	<min>0.0</min>
 	<max>0.5</max>
@@ -232,7 +798,7 @@
     	<outer-gain>0.4</outer-gain>
    </orientation>
    <volume>
-    	<property>engines/engine[1]/n2</property>
+    	<property>fdm/jsbsim/fcs/N2SOUND</property>
     	<factor>0.05</factor>
 	<min>0.0</min>
 	<max>0.5</max>
@@ -270,7 +836,7 @@
     	<outer-gain>0.4</outer-gain>
    </orientation>
    <volume>
-    	<property>engines/engine[0]/n2</property>
+    	<property>fdm/jsbsim/fcs/N2SOUND</property>
     	<factor>0.05</factor>
 	<min>0.0</min>
 	<max>0.5</max>
@@ -305,7 +871,7 @@
    </orientation>
  
    <volume>
-    	<property>engines/engine[0]/n2</property>
+    	<property>fdm/jsbsim/fcs/N2SOUND</property>
     	<factor>0.1</factor>
 	<min>0.0</min>
 	<max>0.5</max>
@@ -342,7 +908,7 @@
    </orientation>
  
    <volume>
-    	<property>engines/engine[0]/n2</property>
+    	<property>fdm/jsbsim/fcs/N2SOUND</property>
     	<factor>0.1</factor>
 	<min>0.0</min>
 	<max>0.5</max>
@@ -379,7 +945,7 @@
    </orientation>
  
    <volume>
-    	<property>engines/engine[0]/n2</property>
+    	<property>fdm/jsbsim/fcs/N2SOUND</property>
     	<factor>0.1</factor>
 	<min>0.0</min>
 	<max>0.5</max>
@@ -416,7 +982,7 @@
    </orientation>
  
    <volume>
-    	<property>engines/engine[0]/n2</property>
+    	<property>fdm/jsbsim/fcs/N2SOUND</property>
     	<factor>0.1</factor>
 	<min>0.0</min>
 	<max>0.5</max>
@@ -430,7 +996,66 @@
 
     </engine>
 
+  <sonicboom>
+   <name>Sonic Boom</name>
+	<mode>once</mode>
+   <path>Aircraft/T-50/Sounds/sonicboom.wav</path>
+   <condition>
+   <and>
+	    <greater-than>
+	     	<property>/velocities/mach</property>
+	     	<value>1.0</value>
+	    </greater-than>
+	    <equals>
+		    <property>/sim/current-view/internal</property>
+		    <value>false</value>
+		</equals>
+	</and>
+   </condition>
+      <reference-dist>100</reference-dist>
+      <max-dist>90</max-dist>
+  </sonicboom>
 
+    <sonicboom2>
+   <name>Sonic Boom2</name>
+	<mode>once</mode>
+   <path>Aircraft/T-50/Sounds/sonicboom.wav</path>
+   <condition>
+   <and>
+	    <greater-than>
+	     	<property>/velocities/mach</property>
+	     	<value>1.0</value>
+	    </greater-than>
+	    <equals>
+		    <property>/sim/current-view/internal</property>
+		    <value>false</value>
+		</equals>
+	</and>
+   </condition>
+      <reference-dist>100</reference-dist>
+      <max-dist>90</max-dist>
+  </sonicboom2>
+  
+
+    <sonicboom3>
+   <name>Sonic Boom3</name>
+	<mode>once</mode>
+   <path>Aircraft/T-50/Sounds/sonicboom.wav</path>
+   <condition>
+   <and>
+	    <greater-than>
+	     	<property>/velocities/mach</property>
+	     	<value>1.0</value>
+	    </greater-than>
+	    <equals>
+		    <property>/sim/current-view/internal</property>
+		    <value>false</value>
+		</equals>
+	</and>
+   </condition>
+      <reference-dist>100</reference-dist>
+      <max-dist>90</max-dist>
+  </sonicboom3>
 
  </fx>
 </PropertyList>
